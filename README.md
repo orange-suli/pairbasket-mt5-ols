@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # PairBasket MT5 配对交易研究项目
 
 > **状态：研究与验证阶段，不代表可直接实盘部署。**
@@ -48,19 +49,23 @@ Z_t = (Spread_t - Mean(Spread_history)) / Std(Spread_history)
 
 ```mermaid
 flowchart TD
-    A[无活动 Basket] --> B{|Z| >= OpenZ?}
-    B -- 否 --> A
-    B -- 是 --> C[建立 Level 0]
-    C --> D{偏离继续扩大 AddZStep?}
-    D -- 是 --> E[加一层\n每 Tick 最多一层]
-    E --> F{达到 CloseZ 回归区域?}
-    D -- 否 --> F
-    F -- 否 --> D
-    F -- 是 --> G[标记 ReversionReached\n停止继续加仓]
-    G --> H{Basket 净利润 >= MinBasketProfit?}
-    H -- 否 --> H
-    H -- 是 --> I[整组平仓]
-    I --> J[冷却期]
+    A["无活动 Basket"] --> B{"abs(Z) >= OpenZ?"}
+    B -->|否| A
+    B -->|是| C["建立 Level 0"]
+
+    C --> D{"偏离继续扩大 AddZStep?"}
+    D -->|是| E["加一层<br/>每 Tick 最多一层"]
+    D -->|否| F{"达到 CloseZ 回归区域?"}
+
+    E --> F
+    F -->|否| D
+    F -->|是| G["标记 ReversionReached<br/>停止继续加仓"]
+
+    G --> H{"Basket 净利润 >= MinBasketProfit?"}
+    H -->|否| H
+    H -->|是| I["整组平仓"]
+
+    I --> J["冷却期"]
     J --> A
 ```
 
@@ -203,3 +208,6 @@ Score 不直接奖励资金周转，因此必须与 NetProfit、Sharpe、PF、Ma
 ## License
 
 当前仓库**尚未选择开源许可证**。如果计划设为 Public 并允许第三方复制/修改/再分发，请在发布前明确添加合适的 LICENSE。
+=======
+# pairbasket-mt5-ols
+>>>>>>> origin/main
