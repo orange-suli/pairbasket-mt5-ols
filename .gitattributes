@@ -1,0 +1,4 @@
+*.mq5 linguist-language=C++
+*.mqh linguist-language=C++
+*.csv text eol=lf
+*.md text eol=lf

@@ -1,0 +1,33 @@
+# MT5 compiled / local runtime
+*.ex5
+*.ex4
+*.set
+*.ini
+*.log
+*.tmp
+*.bak
+
+# MT5 terminal/tester local artifacts
+MQL5/Logs/
+Tester/
+Logs/
+Common/Files/
+
+# IDE / OS
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+.env
+
+# Large/local scratch outputs
+sample_out/
+test_out/
+*.html
+*.htm
